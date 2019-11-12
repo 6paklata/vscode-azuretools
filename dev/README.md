@@ -6,3 +6,4 @@ This package provides common Azure dev dependency elements for VS Code extension
 
 ## License
 [MIT](LICENSE.md)
+test

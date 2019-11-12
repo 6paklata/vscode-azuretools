@@ -279,3 +279,4 @@ export class WebAppTreeItem extends AzureTreeItem {
 ## License
 
 [MIT](LICENSE.md)
+test
