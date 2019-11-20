@@ -132,10 +132,15 @@ async function validateLinuxFunctionAppSettings(context: IActionContext, client:
 
     let hasChanged: boolean = false;
 
-    const keysToRemove: string[] = [
-        'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING',
-        'WEBSITE_CONTENTSHARE'
-    ];
+    const keysToRemove: string[] = [];
+
+    // Only need to remove these for linux consumption https://github.com/microsoft/vscode-azurefunctions/issues/1682
+    if (isConsumption) {
+        keysToRemove.push(
+            'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING',
+            'WEBSITE_CONTENTSHARE'
+        );
+    }
 
     if (doBuild) {
         keysToRemove.push(
